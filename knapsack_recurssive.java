@@ -3,13 +3,12 @@
 import java.io.*;
 import java.util.*;
 
-class GFG {
+class knap {
 	public static void main (String[] args) {
-		System.out.println("GfG!");
-		int[] wt = {1, 3, 4, 7};
-		int[] val = {1, 4, 5, 7};
+		int[] wt = {1, 3, 4, 6, 2};
+		int[] val = {1, 4, 5, 7, 3};
 		int n = 4;
-		int W = 100;
+		int W = 10;
 		
 		int sol = knapsack(wt, val, n, W);
 		
@@ -21,20 +20,16 @@ class GFG {
 	        return 0;
 	    }
 	    
-	    if(wt[n-1]*val[n-1] <= W){
-	        return Math.max(wt[n-1]*val[n-1] + knapsack(wt, val, n-1, W-(wt[n-1]*val[n-1])), 
+	    if(wt[n-1] <= W){
+	        return Math.max(val[n-1] + knapsack(wt, val, n-1, W-wt[n-1]), 
 	        knapsack(wt, val, n-1, W));
 	    }
 	    
-	    else{
+	    else if(wt[n-1] > W){
 	        return knapsack(wt, val, n-1, W);
 	    }
+	    
+	    return -1;
 	}
 	
-	
-	
-	
-	
-	
-	
-}
+}	
