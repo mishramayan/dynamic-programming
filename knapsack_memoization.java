@@ -3,13 +3,12 @@
 import java.io.*;
 import java.util.*;
 
-class GFG {
+class knap {
     
     
 	static int[][] dp = new int[6][11];
     
 	public static void main (String[] args) {
-		System.out.println("GfG!");
 		int[] wt = {1, 3, 4, 6, 2};
 		int[] val = {1, 4, 5, 7, 3};
 		int n = 5;
